@@ -84,13 +84,19 @@ return [
     |
     */
 
+    // 'auth' => [
+    //     'guard' => env('FILAMENT_AUTH_GUARD', 'web'),
+    //     'pages' => [
+    //         'login' => \Filament\Http\Livewire\Auth\Login::class,
+    //     ],
+    // ],
+    // used filament access control package : https://github.com/chiiya/filament-access-control
     'auth' => [
-        'guard' => env('FILAMENT_AUTH_GUARD', 'web'),
+        'guard' => env('FILAMENT_AUTH_GUARD', 'filament'),
         'pages' => [
-            'login' => \Filament\Http\Livewire\Auth\Login::class,
+            'login' => \Chiiya\FilamentAccessControl\Http\Livewire\Login::class,
         ],
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Pages
